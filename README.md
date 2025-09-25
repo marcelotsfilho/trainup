@@ -52,4 +52,12 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+<<<<<<< HEAD
 >>>>>>> 2f8a43c (Initial commit)
+=======
+
+---
+Estrutura do projeto:
+
+Página inicial do app está localizada em ./src/app/index.tsx
+>>>>>>> 261cb68 (Estrutura base do projeto)
