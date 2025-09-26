@@ -2,8 +2,8 @@ import { Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View>
-      <Text>Teste Home page</Text>
+    <View className="flex-1 items-center justify-center">
+      <Text className="text-5xl">Teste Home page</Text>
     </View>
   );
 }

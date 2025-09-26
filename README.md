@@ -1,63 +1,96 @@
-<<<<<<< HEAD
-# trainup
-Repositório destinado a implementação da aplicação mobile para a disciplina Desenvolvimento para Dispositivos Móveis
-=======
-# Welcome to your Expo app 👋
+# **TRAINUP**
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Aplicativo para a disciplina de Programação para Dispositivos Móveis  
 
-## Get started
+A disciplina de **Programação para Dispositivos Móveis** estabelece como atividade avaliativa o desenvolvimento de uma aplicação prática ao longo do semestre.  
+A proposta apresentada pela equipe composta por **Marcelo Teixeira de Sousa Filho** e **Rafaela ...** consiste no **TrainUp**, um aplicativo voltado para a **gestão de treinos em academias**.  
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-<<<<<<< HEAD
->>>>>>> 2f8a43c (Initial commit)
-=======
+O aplicativo permitirá ao usuário:  
+- Acessar notícias e comunicados da academia, como horários de funcionamento em feriados e finais de semana.  
+- Consultar o status de pagamento de sua mensalidade.  
+- Visualizar, de forma prática e organizada, sua ficha de treino diretamente no celular.  
 
 ---
-Estrutura do projeto:
 
-Página inicial do app está localizada em ./src/app/index.tsx
->>>>>>> 261cb68 (Estrutura base do projeto)
+## Estrutura  
+
+A aplicação será desenvolvida utilizando **React Native** em conjunto com o **Expo**, que tem como principal objetivo facilitar a prototipação do projeto e permitir a visualização diretamente em dispositivos móveis.  
+
+Para a estilização, será empregado o **Tailwind CSS** (via **Nativewind**, adaptado ao React Native), o que possibilitará a criação de uma interface moderna, responsiva e com suporte a animações de maneira simplificada e componentizada.  
+
+<p align="center">
+   <img src="image.png" alt="Estrutura base do projeto" />
+</p>
+
+A imagem acima apresenta a estrutura inicial de diretórios do projeto, organizada da seguinte forma:  
+
+```bash
+.
+├── .expo/                  # Configurações do Expo
+├── .vscode/                # Configurações do editor VSCode
+├── assets/                 # Recursos estáticos (imagens, ícones, etc.)
+├── node_modules/           # Dependências do projeto
+├── scripts/
+│   └── reset-project.js    # Script auxiliar
+├── src/
+│   ├── app/
+│   │   ├── _layout.tsx     # Layout principal
+│   │   └── index.tsx       # Ponto inicial de rotas
+│   └── styles/
+│       └── global.css      # Estilização global
+├── .gitignore
+├── app.json
+├── babel.config.js
+├── eslint.config.js
+├── expo-env.d.ts
+├── image.png
+├── metro.config.js
+├── nativewind-env.d.ts
+├── package-lock.json
+├── package.json
+├── README.md
+├── tailwind.config.js
+└── tsconfig.json
+```
+
+---
+
+## Como executar o projeto
+
+Para utilizar localmente, basta seguir os seguintes passos após clonar do GitHub:
+
+1. Pré-requisitos:
+   
+   - Node.js instalado (versão LTS recomendada)
+   - Expo CLI instalado globalmente
+
+   ```bash
+   npm install -g expo-cli
+   ``` 
+
+   - Aplicativo Expo Go instalado no celular
+---
+2. Clonar o repositório
+
+```bash
+git clone https://github.com/marcelotsfilho/trainup.git
+cd trainup
+```
+---
+3. Instalar as dependências
+```bash
+npm install
+```
+---
+4. Iniciar o servidor de desenvolvimento
+```bash
+npx expo start
+```
+---
+5. Executar a emulação no celular
+   
+   - Abra o aplicativo Expo Go em seu dispositivo móvel 
+   - Escaneie o QR Code gerado no terminal após iniciar o **passo 4**
+   - A aplicação será carregada automaticamente no seu dispositivo móvel
+
+---
