@@ -18,7 +18,7 @@ export default function Login(){
                     source={require('../../assets/images/logo-azul.png')}
                 />
             </View>
-            <View className="mx-16 bg-red">
+            <View className="mx-16 mt-10">
                 <TextInput
                     className="h-14 w-[320px] border border-[#3A7DFF] rounded-xl px-3 mt-10"
                     onChangeText={onChangeText}
@@ -34,9 +34,9 @@ export default function Login(){
                     keyboardType="email-address"
                 />
             </View>
-            <View className="mt-20">
+            <View className="mt-28">
                 {/* TODO: Alterar a rota */}
-                <Link href="/" asChild>
+                <Link href={"/home"} asChild>
                     <Pressable className="h-16 w-60 items-center justify-center mt-8 px-4 py-2 bg-blue-500 rounded-full ">
                         <Text className="text-white text-xl">ENTRAR</Text>
                     </Pressable>
