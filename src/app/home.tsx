@@ -2,6 +2,7 @@ import React from "react"
 import { View, Text, Image } from "react-native"
 import ProgressCard from "../components/ProgressCard";
 import Constants  from "expo-constants";
+import WarnmingCard from "../components/WarningCard";
 
 const statusBarHeight = Constants.statusBarHeight;
 
@@ -25,7 +26,10 @@ export default function Home(){
             </View>
             <View className="flex-1 items-center justify-center">
                 <ProgressCard />
-            </View>  
+            </View>
+            <View className="flex-1">
+                <WarnmingCard />
+            </View>
         </View>
     );
 }
