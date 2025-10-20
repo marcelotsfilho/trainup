@@ -1,35 +1,59 @@
+import { Ionicons } from '@expo/vector-icons'; // novo import
 import { Tabs } from "expo-router";
 import '../../styles/global.css';
 
 export default function TabsLayout() {
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
-      <Tabs.Screen 
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: '#3CCF91',
+        tabBarInactiveTintColor: '#fff',
+        tabBarStyle: {
+          backgroundColor: '#3A7DFF',
+          width: '100%',
+          height: 100,
+          justifyContent: 'center',
+          alignItems:'center',
+          paddingBottom: 20,
+          paddingTop: 10,
+        }
+      }}
+    >
+      <Tabs.Screen
         name="home"
         options={{
           title: "Home",
-          // Adicione ícone aqui se desejar
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
         }}
       />
-      <Tabs.Screen 
+      <Tabs.Screen
         name="workout"
         options={{
           title: "Treinos",
-          // Adicione ícone aqui se desejar
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="barbell-outline" size={size} color={color} />
+          ),
         }}
       />
-      <Tabs.Screen 
+      <Tabs.Screen
         name="payment"
         options={{
           title: "Pagamento",
-          // Adicione ícone aqui se desejar
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="card-outline" size={size} color={color} />
+          ),
         }}
       />
-      <Tabs.Screen 
+      <Tabs.Screen
         name="profile"
         options={{
           title: "Perfil",
-          // Adicione ícone aqui se desejar
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>
