@@ -1,8 +1,8 @@
 import React from "react"
 import { View, Text, Image } from "react-native"
-import ProgressCard from "../components/ProgressCard";
+import ProgressCard from "../../components/ProgressCard";
 import Constants  from "expo-constants";
-import WarnmingCard from "../components/WarningCard";
+import WarnmingCard from "../../components/WarningCard";
 
 const statusBarHeight = Constants.statusBarHeight;
 
@@ -19,7 +19,7 @@ export default function Home(){
                 >
                     <Image 
                         className=""
-                        source={require('../../assets/images/perfil.png')}
+                        source={require('../../../assets/images/perfil.png')}
                     />
                     <Text className="font-semibold color-white text-xl w-full pl-5">Olá, usuário!</Text>
                 </View>

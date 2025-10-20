@@ -15,7 +15,7 @@ export default function Login(){
             <View className="mt-20">
                 <Image
                     className="w-72 h-72"
-                    source={require('../../assets/images/logo-azul.png')}
+                    source={require('../../../assets/images/logo-azul.png')}
                 />
             </View>
             <View className="mx-16 mt-10">
@@ -36,17 +36,17 @@ export default function Login(){
             </View>
             <View className="mt-28">
                 {/* TODO: Alterar a rota */}
-                <Link href={"/home"} asChild>
+                <Link href="/(tabs)/home" asChild>
                     <Pressable className="h-16 w-60 items-center justify-center mt-8 px-4 py-2 bg-blue-500 rounded-full ">
                         <Text className="text-white text-xl">ENTRAR</Text>
                     </Pressable>
                 </Link>
             </View>
             <View className="mt-10">
-                {/* TODO: Alterar a rota */}
+                {/* rota para caso deseja visualizar tela de carregamento */}
                 <Link href="/" asChild>
                     <Pressable>
-                        <Text className="text-[#3A7DFF] text-lg">Esqueci minha senha</Text>
+                        <Text className="text-[#3A7DFF] text-lg">Voltar tela de carregamento</Text>
                     </Pressable>
                 </Link>
             </View>
