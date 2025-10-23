@@ -3,7 +3,11 @@
 ## Aplicativo para a disciplina de Programação para Dispositivos Móveis  
 
 A disciplina de **Programação para Dispositivos Móveis** estabelece como atividade avaliativa o desenvolvimento de uma aplicação prática ao longo do semestre.  
+<<<<<<< HEAD
 A proposta apresentada pela equipe composta por **Marcelo Teixeira de Sousa Filho** e **Rafaela ...** consiste no **TrainUp**, um aplicativo voltado para a **gestão de treinos em academias**.  
+=======
+A proposta apresentada pela equipe composta por **Marcelo Teixeira de Sousa Filho** e **Rafaela Oliveira Lorenzeto Braga** consiste no **TrainUp**, um aplicativo voltado para a **gestão de treinos em academias**.  
+>>>>>>> dac7c3e (Salvando alterações/tela Perfil pronta)
 
 O aplicativo permitirá ao usuário:  
 - Acessar notícias e comunicados da academia, como horários de funcionamento em feriados e finais de semana.  
