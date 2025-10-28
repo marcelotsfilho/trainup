@@ -1,4 +1,5 @@
 import Timer from '@/src/components/Timer';
+import WorkoutCard from '@/src/components/WorkoutCard';
 import { Ionicons } from '@expo/vector-icons';
 import Constants from "expo-constants";
 import { Text, View } from "react-native";
@@ -20,6 +21,23 @@ export default function Workout(){
                 <View className="justify-center items-end w-[70%] pt-5">
                     <Timer />
                 </View>
+            </View>
+            <View className="">
+                <WorkoutCard 
+                    treino="A"
+                    grupoMuscular="Bíceps/Costa/Ombro"
+                    quantidade={11}
+                />
+                <WorkoutCard 
+                    treino="B"
+                    grupoMuscular="Perna/Glúteo"
+                    quantidade={8}
+                />
+                <WorkoutCard 
+                    treino="C"
+                    grupoMuscular="Peito/Tríceps"
+                    quantidade={10}
+                />
             </View>
         </View>
     )
