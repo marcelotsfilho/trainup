@@ -1,12 +1,25 @@
 import React from "react";
 import { Link } from "expo-router";
 import { View, Text,TextInput, Image, Pressable } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import Constants from "expo-constants";
 
 const statusBarHeight = Constants.statusBarHeight;
 
 export default function Login(){
-    const [text, onChangeText] = React.useState('');
+    // estados(hooks) para armazenar os valores 
+    const [user, onChangeUser] = React.useState('');
+    const [password, onChangePassword] = React.useState('');
+
+    // implementação do async storage
+    const storeData = async (value: string) => {
+        try{
+
+        }catch(error){
+            console.error('Erro ao salvar os dados de perfil', error);
+        }
+    }
+
     return(
         <View 
             className="flex-1 items-center bg-white"
@@ -21,15 +34,15 @@ export default function Login(){
             <View className="mx-16 mt-10">
                 <TextInput
                     className="h-14 w-[320px] border border-[#3A7DFF] rounded-xl px-3 mt-10"
-                    onChangeText={onChangeText}
-                    value={text}
+                    onChangeText={onChangeUser}
+                    value={user}
                     placeholder="Login"
                     keyboardType="email-address"
                 />
                 <TextInput
                     className="h-14 w-[320px] border border-[#3A7DFF] rounded-xl px-3 mt-5"
-                    onChangeText={onChangeText}
-                    value={text}
+                    onChangeText={onChangePassword}
+                    value={password}
                     placeholder="Senha"
                     keyboardType="email-address"
                 />
