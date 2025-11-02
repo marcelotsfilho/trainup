@@ -3,6 +3,7 @@ import Constants from "expo-constants";
 import React from "react";
 import { Text, View } from 'react-native';
 
+import AllPaymentsList from '@/src/components/AllPaymentsList';
 import PaymentList from '@/src/components/PaymentList';
 import PaymentOpenList from '@/src/components/PaymentOpenList';
 
@@ -54,7 +55,7 @@ export default function Payment() {
             >
                 <Tab.Screen name="Abertos" component={PaymentOpenList} />
                 <Tab.Screen name="Pagos" component={PaymentList} />
-                <Tab.Screen name="Todos" component={PaymentList} />
+                <Tab.Screen name="Todos" component={AllPaymentsList} />
             </Tab.Navigator>
         </View>
     );
