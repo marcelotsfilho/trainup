@@ -8,7 +8,7 @@ interface WorkoutCardProps {
 
 export default function WorkoutCard({ treino, grupoMuscular, quantidade }: WorkoutCardProps) {
   return (
-    <View className="flex-row w-96 h-20 bg-white m-4 rounded-2xl shadow-xl">
+    <View className="flex-row w-96 h-20 bg-white m-3 rounded-2xl drop-shadow-lg">
         <View className="flex-row justify-center items-center w-20">
             <Text className="font-regular font-[SF Pro] text-4xl text-[#3A7DFF]">{treino}</Text>
         </View>
