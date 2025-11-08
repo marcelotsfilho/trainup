@@ -3,10 +3,12 @@
 import { Stack } from 'expo-router';
 import Timer from '@/src/components/Timer'; // 1. Importe seu componente
 import { View } from 'react-native';
+import { TimerProvider } from '@/src/context/TimerContext';
 
 export default function WorkoutStackLayout() {
   return (
-    <Stack>
+    <TimerProvider>
+      <Stack>
       {/* A tela principal (index) não terá cabeçalho */}
       <Stack.Screen 
         name="index" 
@@ -40,5 +42,6 @@ export default function WorkoutStackLayout() {
         }} 
       />
     </Stack>
+    </TimerProvider> 
   );
 }

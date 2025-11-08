@@ -1,37 +1,43 @@
-// src/app/(tabs)/workout/[id].tsx
-import { View, Text } from 'react-native';
-import { useLocalSearchParams, Stack } from 'expo-router';
+import ExerciseCard from '@/src/components/ExerciseCard';
+import { EXERCISES } from '@/src/data/exercises';
+import { Stack, useLocalSearchParams } from 'expo-router';
+import React from 'react';
+import { ActivityIndicator, FlatList, View } from 'react-native';
 
 export default function WorkoutDetailScreen() {
-  // Pega o 'id' da URL (ex: "A", "B" ou "C")
-  const { id } = useLocalSearchParams(); 
+  const { id } = useLocalSearchParams() as { id?: string };
+  const treinoId = (id || 'A').toUpperCase();
+  const items = EXERCISES[treinoId] || [];
 
   return (
-    <View style={{ flex: 1, padding: 16, backgroundColor: 'white' }}>
-      <Stack.Screen 
-        options={{ 
-          title: `Treino ${id}`,
-          headerStyle: { backgroundColor:'#3A7DFF' },
+    <View className="flex-1 bg-[#E5EAF2]">
+      <Stack.Screen
+        options={{
+          title: `Treino ${treinoId}`,
+          headerStyle: { backgroundColor: '#3A7DFF' },
           headerTintColor: '#fff',
           headerTitleAlign: 'center',
-          animation: 'fade'
+          animation: 'fade',
         }}
       />
-      
-      <Text style={{ fontSize: 24, fontWeight: 'bold' }}>
-        Ficha de Treino {id}
-      </Text>
 
-      {/* Listagem dos exercicios de forma estática */}
-      {id === 'A' && (
-        <View>
-          {/* Mapeie sua lista de exercícios aqui */}
-          <Text>Remada cavalinho</Text>
-          <Text>Puxada aberta</Text>
-          <Text>Puxada fechada</Text>
-          {/* ...etc */}
-        </View>
-      )}
+      <FlatList
+        data={items}
+        keyExtractor={(it) => it.id}
+        // uso de tailwind para padding/spacing; mantém contentContainerStyle apenas para pb numérico
+        className="px-4 mt-5"
+        contentContainerStyle={{ paddingBottom: 10 }}
+        // função anonima para renderizar cada item da lista
+        renderItem={({ item }) => (
+          <ExerciseCard treino={treinoId} exercicio={item.name} repeticoes={item.repeticoes} />
+        )}
+        ListEmptyComponent={
+          <View className="p-4 items-center">
+            <ActivityIndicator color="#3A7DFF" />
+          </View>
+        }
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 }
