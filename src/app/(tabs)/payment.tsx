@@ -1,3 +1,4 @@
+//Prepara um navegador de abas que fica no topo
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Constants from "expo-constants";
 import React from "react";
@@ -17,11 +18,17 @@ export default function Payment() {
         <View style={{ flex: 1, backgroundColor: 'white', position: 'relative' }}>
             <Tab.Navigator
                 screenOptions={{
+                    //Linha que desliza embaixo do nome da aba
                     tabBarIndicatorStyle: { backgroundColor: '#3a7dff' },
+                    //<Text> para cada rótulo de aba.
                     tabBarLabel: ({ focused, children }) => (
                         <Text style={{
                             fontWeight: 'bold',
-                            borderRadius: 20,
+                            borderTopLeftRadius: children === 'Abertos' ? 15 : 0,
+                            borderTopRightRadius: children === 'Todos' ? 15 : 0,
+                            borderBottomLeftRadius: children === 'Abertos' ? 15 : 0,
+                            borderBottomRightRadius: children === 'Todos' ? 15 : 0,
+                            fontSize: 14,
                             margin: 0,
                             paddingHorizontal: 25,
                             paddingVertical: 10,
@@ -34,6 +41,7 @@ export default function Payment() {
                             {children}
                         </Text>
                     ),
+                    //Estilo da barra de abas (fundo)
                     tabBarStyle: {
                         position: 'absolute',
                         padding: 0,
@@ -50,7 +58,8 @@ export default function Payment() {
                         margin: 0,
                         marginTop: 50,
                     },
-                    sceneStyle: { marginTop: HEADER_HEIGHT, paddingTop: statusBarHeight }
+                    //Exibido abaixo da barra de abas.
+                    sceneStyle: { marginTop: HEADER_HEIGHT, paddingTop: statusBarHeight },
                 }}
             >
                 <Tab.Screen name="Abertos" component={PaymentOpenList} />
