@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 interface WorkoutCardProps {
   treino: string;
@@ -7,8 +7,9 @@ interface WorkoutCardProps {
 }
 
 export default function WorkoutCard({ treino, grupoMuscular, quantidade }: WorkoutCardProps) {
+
   return (
-    <View className="flex-row w-96 h-20 bg-white m-4 rounded-2xl shadow-xl">
+    <TouchableOpacity className="flex-row w-96 h-20 bg-white m-4 rounded-2xl shadow-xl" > 
         <View className="flex-row justify-center items-center w-20">
             <Text className="font-regular font-[SF Pro] text-4xl text-[#3A7DFF]">{treino}</Text>
         </View>
@@ -20,6 +21,6 @@ export default function WorkoutCard({ treino, grupoMuscular, quantidade }: Worko
             <Text className="text-2xl text-blue-500">{quantidade}</Text>
             <Text className="text-sm text-gray-600">Exercícios</Text>
         </View>
-    </View>
+    </TouchableOpacity>
   );
 }

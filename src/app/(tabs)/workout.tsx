@@ -1,6 +1,5 @@
 import Timer from '@/src/components/Timer';
 import WorkoutCard from '@/src/components/WorkoutCard';
-import { Ionicons } from '@expo/vector-icons';
 import Constants from "expo-constants";
 import { Text, View } from "react-native";
 
