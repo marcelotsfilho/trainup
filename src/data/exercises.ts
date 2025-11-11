@@ -5,11 +5,11 @@ export const EXERCISES: Record<string, ExerciseItem[]> = {
     { id: 'A-1', name: 'Crucifixo Máquina', repeticoes: '4x12', carga: '30 Kg', gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif' },
     { id: 'A-2', name: 'Crossover Polia Alta', repeticoes: '3x12',  carga: '25 Kg',gifUrl: 'https://i.pinimg.com/originals/86/99/43/8699435cd110bbdbc4f06f56b6c4cf6e.gif' },
     { id: 'A-3', name: 'Crucifixo Inclinado com Halteres', repeticoes: '4x12',  carga: '30 Kg',gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-dumbbell-Fly.gif' },
-    { id: 'A-3', name: 'Supino Inclinado com Halteres', repeticoes: '4x12',  carga: '30 Kg',gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif' },
-    { id: 'A-4', name: 'Banco Supino Reto', repeticoes: '3x10', carga: '30 Kg', gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Bench-Press.gif' },
-    { id: 'A-5', name: 'Elevação Lateral Inclinado com Halteres', repeticoes: '2x15', carga: '25 Kg', gifUrl: 'https://www.musclewiki.com/media/uploads/male-machine-fly-front_1eYnHOy.gif' }, // nao encontrado o gif
-    { id: 'A-6', name: 'Elevação Lateral Sentado com Halteres', repeticoes: '4x12', carga: '30 Kg', gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/04/Seated-Dumbbell-Lateral-Raise.gif' },
-    { id: 'A-7', name: 'Triceps Paralelas', repeticoes: '4x10', carga: '30 Kg', gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Triceps-Dips.gif' },
+    { id: 'A-4', name: 'Supino Inclinado com Halteres', repeticoes: '4x12',  carga: '30 Kg',gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif' },
+    { id: 'A-5', name: 'Banco Supino Reto', repeticoes: '3x10', carga: '30 Kg', gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Bench-Press.gif' },
+    { id: 'A-6', name: 'Elevação Lateral Inclinado com Halteres', repeticoes: '2x15', carga: '25 Kg', gifUrl: 'https://www.musclewiki.com/media/uploads/male-machine-fly-front_1eYnHOy.gif' }, // nao encontrado o gif
+    { id: 'A-7', name: 'Elevação Lateral Sentado com Halteres', repeticoes: '4x12', carga: '30 Kg', gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/04/Seated-Dumbbell-Lateral-Raise.gif' },
+    { id: 'A-8', name: 'Triceps Paralelas', repeticoes: '4x10', carga: '30 Kg', gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Triceps-Dips.gif' },
   ],
   B: [
     { id: 'B-1', name: 'Barra Fixa (Pegada Aberta)', repeticoes: '4xFalha', carga: '30 Kg', gifUrl: 'https://fitnessprogramer.com/wp-content/uploads/2025/07/Top-Half-Pull-up.gif' },

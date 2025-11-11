@@ -1,5 +1,6 @@
 // src/app/(tabs)/workout/exercise/[exerciseId].tsx
 
+import StepNavigator from '@/src/components/StepNavigator';
 import { EXERCISES } from '@/src/data/exercises';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import { Image, Text, View } from 'react-native';
@@ -33,6 +34,7 @@ export default function ExerciseDetailScreen() {
           title: exercise.name,
           headerStyle: { backgroundColor: '#3A7DFF' },
           headerTintColor: '#fff',
+          
         }}
       />
       
@@ -56,13 +58,16 @@ export default function ExerciseDetailScreen() {
             <Text className="text-lg font-bold text-[#3A7DFF]">{exercise.repeticoes}</Text>
             <Text className="text-sm text-gray-600">Repetições</Text>
           </View>
-          {/* divisor */}
           <View className="h-12 w-[1px] bg-gray-200" />
           <View className="items-center">
             <Text className="text-lg font-bold text-[#3A7DFF]">{exercise.carga}</Text>
             <Text className="text-sm text-gray-600">Carga</Text>
           </View>
         </View>
+      </View>
+      
+      <View className='items-center justify-center pt-10'>
+        <StepNavigator />
       </View>
     </View>
   );
