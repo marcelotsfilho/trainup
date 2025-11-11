@@ -10,11 +10,12 @@ import PaymentOpenList from '@/src/components/PaymentOpenList';
 const Tab = createMaterialTopTabNavigator();
 
 const statusBarHeight = Constants.statusBarHeight;
-const HEADER_HEIGHT = 162;
+const HEADER_HEIGHT = 108 + statusBarHeight;
 
 export default function Payment() {
     return (
-        <View style={{ flex: 1, backgroundColor: 'white', position: 'relative' }}>
+        <View 
+            style={{ flex: 1, backgroundColor: 'white', position: 'relative' }}>
             <Tab.Navigator
                 screenOptions={{
                     tabBarIndicatorStyle: { backgroundColor: '#3a7dff' },
@@ -24,7 +25,7 @@ export default function Payment() {
                             borderRadius: 20,
                             margin: 0,
                             paddingHorizontal: 25,
-                            paddingVertical: 10,
+                            paddingVertical: 15,
                             minWidth: 105,
                             maxWidth: 105,
                             textAlign: 'center',

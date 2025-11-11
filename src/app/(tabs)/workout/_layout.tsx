@@ -7,47 +7,50 @@ import { TimerProvider } from '@/src/context/TimerContext';
 
 export default function WorkoutStackLayout() {
   return (
+    // timer context provider para gerenciar o estado do timer, fazendo com que 
+    // o timer esteja disponível em todas as telas dentro deste stack
     <TimerProvider>
       <Stack>
+        {/* tela de seleção do grupamento muscular */}
         <Stack.Screen 
           name="index" 
           options={{ headerShown: false }} 
         />
         
-        {/* 1. ATUALIZE O NOME DA TELA 2 (se você renomeou) */}
+        {/* tela de seleção dos exercícios */}
         <Stack.Screen 
-          name="[workoutId]" // <-- Mudou de [id]
-          options={{ 
+          name="[workoutId]"
+          options={{
             headerStyle: { backgroundColor: '#3A7DFF' },
-            headerTintColor: '#FFFFFF',
-            headerShadowVisible: false,
-            headerBackTitle: 'Voltar',
+            headerTintColor: '#fff',
+            headerShadowVisible: false, // remove sobra do header
             headerRight: () => (
-              <View style={{ marginRight: 10 }}>
+              // COMO CENTRALIZAR O TIMER NO VIEW
+              // margin-left esta servindo para empurrar o texto para a esquerda
+              <View className='ml-20 items-center justify-center'>
                 <Timer />
               </View>
             ),
           }} 
         />
 
-        {/* 2. ADICIONE A NOVA TELA 3 (Detalhe do Exercício) */}
+        {/* tela de detalhes do exercício */}
         <Stack.Screen 
-          name="exercise/[exerciseId]" // <-- Este é o caminho da nova tela
+          name="exercise/[exerciseId]"
           options={{
             // O título será definido dinamicamente dentro do arquivo
             // ou você pode definir um padrão aqui.
             title: "Exercício",
-            
-            // Reutilize o estilo do header
             headerStyle: { backgroundColor: '#3A7DFF' },
-            headerTintColor: '#FFFFFF',
+            headerTintColor: '#fff',
             headerShadowVisible: false,
-            headerBackTitle: 'Voltar',
-            
-            // Você pode querer o Timer aqui também
             headerRight: () => (
-              <View style={{ marginRight: 10 }}>
-                <Timer />
+              // COMO CENTRALIZAR O TIMER NO VIEW
+              // margin-left esta servindo para empurrar o texto para a esquerda
+              <View className='ml-20'>
+                <View className='items-center justify-center'>
+                  <Timer />
+                </View>
               </View>
             ),
           }} 
