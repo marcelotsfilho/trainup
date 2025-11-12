@@ -15,15 +15,12 @@ export default function Profile() {
         setPerfil(dados);
     }, [dados]);
 
-    //Se o perfil ainda não foi carregado ou se ele é um objeto/array vazio, renderiza uma tela em branco. 
     if(!perfil || Object.keys(perfil).length === 0) {
         return null;
     }
     return (
         <View className="flex-1 bg-gray-100">
             <ProfileHeader
-            //Se o perfil?.perfilHeader?.nome falhar e retornar null ou undefined, garante que o
-            //componente receba uma string vazia '' no lugar. 
                 title={perfil?.perfilHeader?.nome || ''}
                 matricula={perfil?.perfilHeader?.matricula || ''}
             />
