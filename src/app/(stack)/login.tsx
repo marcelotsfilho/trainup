@@ -1,8 +1,7 @@
-import React from "react";
-import { Link } from "expo-router";
-import { View, Text,TextInput, Image, Pressable } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import Constants from "expo-constants";
+import { Link } from "expo-router";
+import React from "react";
+import { Image, Pressable, Text, TextInput, View } from "react-native";
 
 const statusBarHeight = Constants.statusBarHeight;
 
