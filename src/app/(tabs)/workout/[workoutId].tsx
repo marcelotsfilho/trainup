@@ -1,5 +1,3 @@
-// src/app/(tabs)/workout/[workoutId].tsx
-
 import React from 'react';
 import { Stack, useLocalSearchParams, Link } from 'expo-router';
 // 1. Importe 'Pressable'

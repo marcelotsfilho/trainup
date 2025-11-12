@@ -1,7 +1,8 @@
 {
   "perfilHeader": {
     "nome": "Marcelo Teixeira de Sousa Filho",
-    "matricula": "1234"
+    "matricula": "1234",
+    "avatarUrl": "https://example.com/url-da-foto.png"
   },
   "estatisticas": {
     "percentual": 40

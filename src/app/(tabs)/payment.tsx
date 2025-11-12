@@ -1,4 +1,3 @@
-//Prepara um navegador de abas que fica no topo
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Constants from "expo-constants";
 import React from "react";
@@ -15,34 +14,36 @@ const HEADER_HEIGHT = 108 + statusBarHeight;
 
 export default function Payment() {
     return (
-        <View 
-            style={{ flex: 1, backgroundColor: 'white', position: 'relative' }}>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Tab.Navigator
                 screenOptions={{
-                    //Linha que desliza embaixo do nome da aba
                     tabBarIndicatorStyle: { backgroundColor: '#3a7dff' },
-                    //<Text> para cada rótulo de aba.
                     tabBarLabel: ({ focused, children }) => (
-                        <Text style={{
-                            fontWeight: 'bold',
-                            borderTopLeftRadius: children === 'Abertos' ? 15 : 0,
-                            borderTopRightRadius: children === 'Todos' ? 15 : 0,
-                            borderBottomLeftRadius: children === 'Abertos' ? 15 : 0,
-                            borderBottomRightRadius: children === 'Todos' ? 15 : 0,
-                            fontSize: 14,
-                            margin: 0,
-                            paddingHorizontal: 25,
-                            paddingVertical: 15,
-                            minWidth: 105,
-                            maxWidth: 105,
-                            textAlign: 'center',
-                            backgroundColor: focused ? '#FFFFFF' : '#6faeff',
-                            color: '#000',
-                        }}>
-                            {children}
-                        </Text>
+                        <View
+                            style={{
+                                borderTopLeftRadius: children === 'Abertos' ? 15 : 0,
+                                borderTopRightRadius: children === 'Todos' ? 15 : 0,
+                                borderBottomLeftRadius: children === 'Abertos' ? 15 : 0,
+                                borderBottomRightRadius: children === 'Todos' ? 15 : 0,
+                                paddingHorizontal: 25,
+                                paddingVertical: 15,
+                                minWidth: 105,
+                                maxWidth: 105,
+                                backgroundColor: focused ? '#FFFFFF' : '#6faeff',
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    fontWeight: 'bold',
+                                    fontSize: 14,
+                                    textAlign: 'center',
+                                    color: '#000',
+                                }}
+                            >
+                                {children}
+                            </Text>
+                        </View>
                     ),
-                    //Estilo da barra de abas (fundo)
                     tabBarStyle: {
                         position: 'absolute',
                         padding: 0,
@@ -59,8 +60,7 @@ export default function Payment() {
                         margin: 0,
                         marginTop: 50,
                     },
-                    //Exibido abaixo da barra de abas.
-                    sceneStyle: { marginTop: HEADER_HEIGHT, paddingTop: statusBarHeight },
+                    sceneStyle: { marginTop: HEADER_HEIGHT, paddingTop: statusBarHeight }
                 }}
             >
                 <Tab.Screen name="Abertos" component={PaymentOpenList} />
