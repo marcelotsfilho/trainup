@@ -1,22 +1,36 @@
 import React from "react";
-import { Link } from "expo-router";
-import { View, Text,TextInput, Image, Pressable } from "react-native";
+import { Link, useRouter } from "expo-router";
+import { View, Text,TextInput, Image, Pressable, Alert } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Constants from "expo-constants";
 
 const statusBarHeight = Constants.statusBarHeight;
 
+const USUARIO_TESTE = "admin";
+const SENHA_TESTE = "admin123";
+
 export default function Login(){
+    // inicialização do router
+    const router = useRouter();
     // estados(hooks) para armazenar os valores 
     const [user, onChangeUser] = React.useState('');
     const [password, onChangePassword] = React.useState('');
 
-    // implementação do async storage
+    // implementação do async storage para salvar os dados do usuario (quando implementar o backend)
     const storeData = async (value: string) => {
         try{
 
         }catch(error){
             console.error('Erro ao salvar os dados de perfil', error);
+        }
+    }
+
+    const hendleLogin = () => {
+        if(user === USUARIO_TESTE && password === SENHA_TESTE){
+            Alert.alert("Login realizado com sucesso!");
+            router.replace("/(tabs)/home");
+        }else{
+            Alert.alert("Usuário ou senha incorretos.")
         }
     }
 
@@ -37,6 +51,7 @@ export default function Login(){
                     onChangeText={onChangeUser}
                     value={user}
                     placeholder="Login"
+                    placeholderTextColor={"#000"}
                     keyboardType="email-address"
                 />
                 <TextInput
@@ -44,19 +59,20 @@ export default function Login(){
                     onChangeText={onChangePassword}
                     value={password}
                     placeholder="Senha"
-                    keyboardType="email-address"
+                    placeholderTextColor={"#000"}
+                    secureTextEntry={true}
                 />
             </View>
             <View className="mt-28">
-                {/* TODO: Alterar a rota */}
-                <Link href="/(tabs)/home" asChild>
-                    <Pressable className="h-16 w-60 items-center justify-center mt-8 px-4 py-2 bg-blue-500 rounded-full ">
-                        <Text className="text-white text-xl">ENTRAR</Text>
-                    </Pressable>
-                </Link>
+                <Pressable 
+                    className="h-16 w-60 items-center justify-center mt-8 px-4 py-2 bg-blue-500 rounded-full "
+                    onPress={hendleLogin}    
+                >
+                    <Text className="text-white text-xl">ENTRAR</Text>
+                </Pressable>
             </View>
             <View className="mt-10">
-                {/* rota para caso deseja visualizar tela de carregamento */}
+                {/* rota temporaria para caso deseja visualizar tela de carregamento */}
                 <Link href="/" asChild>
                     <Pressable>
                         <Text className="text-[#3A7DFF] text-lg">Voltar tela de carregamento</Text>
