@@ -16,28 +16,37 @@ const HEADER_HEIGHT = 108 + statusBarHeight;
 
 export default function Payment() {
     return (
-        <View 
-            style={{ flex: 1, backgroundColor: 'white', position: 'relative' }}>
+        <View style={{ flex: 1, backgroundColor: 'white' }}>
             <Tab.Navigator
                 screenOptions={{
                     //Estiliza linha que desliza embaixo da aba que está ativa.
                     tabBarIndicatorStyle: { backgroundColor: '#3a7dff' },
                     //Estilo de cada uma das três abas.
                     tabBarLabel: ({ focused, children }) => (
-                        <Text style={{
-                            fontWeight: 'bold',
-                            borderRadius: 20,
-                            margin: 0,
-                            paddingHorizontal: 25,
-                            paddingVertical: 15,
-                            minWidth: 105,
-                            maxWidth: 105,
-                            textAlign: 'center',
-                            backgroundColor: focused ? '#FFFFFF' : '#6faeff',
-                            color: '#000',
-                        }}>
-                            {children}
-                        </Text>
+                        <View
+                            style={{
+                                borderTopLeftRadius: children === 'Abertos' ? 15 : 0,
+                                borderTopRightRadius: children === 'Todos' ? 15 : 0,
+                                borderBottomLeftRadius: children === 'Abertos' ? 15 : 0,
+                                borderBottomRightRadius: children === 'Todos' ? 15 : 0,
+                                paddingHorizontal: 25,
+                                paddingVertical: 15,
+                                minWidth: 105,
+                                maxWidth: 105,
+                                backgroundColor: focused ? '#FFFFFF' : '#6faeff',
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    fontWeight: 'bold',
+                                    fontSize: 14,
+                                    textAlign: 'center',
+                                    color: '#000',
+                                }}
+                            >
+                                {children}
+                            </Text>
+                        </View>
                     ),
                     //Estiliza o contêiner principal da barra de abas.
                     tabBarStyle: {

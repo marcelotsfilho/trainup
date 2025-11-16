@@ -16,11 +16,11 @@ export default function Index() {
       // await carregarDadosDoUsuario();
       // await carregarConfiguracoes();
 
-      // simulando um carregamento utilizando delay:
+      // simulando um carregamento utilizando delay
       await new Promise((resolve) => setTimeout(resolve, 3500));
 
       if (mounted) {
-        // Substitui a rota atual por /login (não permite voltar para o splash)
+        // substitui a rota atual por /login (não permite voltar para o splash)
         router.replace("/login");
       }
     }
