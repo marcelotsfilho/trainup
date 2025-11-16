@@ -20,8 +20,10 @@ export default function TabsLayout() {
         }
       }}
     >
+      {/*Aqui são definidas as abas do aplicativo */}
       <Tabs.Screen
         name="home"
+        //Aqui é definido o que é específico desta aba
         options={{
           title: "Home",
           tabBarIcon: ({ color, size }) => (

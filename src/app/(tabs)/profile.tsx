@@ -6,21 +6,24 @@ import ProfileHeader from '@/src/components/ProfileHeader';
 import RegistrationData from '@/src/components/RegistrationData';
 import Training from '@/src/components/Training';
 
-import dados from '../../data/perfilAluno.json';
+import { dadosPerfilAluno, PerfilAluno } from '../../data/perfilAluno';
 
 export default function Profile() {
-    const [perfil, setPerfil] = useState([] as unknown as typeof dados);
+    const [perfil, setPerfil] = useState({} as PerfilAluno);
 
     useEffect(() => {
-        setPerfil(dados);
-    }, [dados]);
+        setPerfil(dadosPerfilAluno);
+    }, [dadosPerfilAluno]);
 
+    //Na primeira renderização (quando perfil ainda está vazio), o if é true e renderiza uma tela em branco (null). 
+    //Isso impede que o app quebre ao tentar ler dados que ainda não existem.
     if(!perfil || Object.keys(perfil).length === 0) {
         return null;
     }
     return (
         <View className="flex-1 bg-gray-100">
             <ProfileHeader
+            //Garantem que a title e a matricula sempre recebam um valor de string válido.
                 title={perfil?.perfilHeader?.nome || ''}
                 matricula={perfil?.perfilHeader?.matricula || ''}
             />
