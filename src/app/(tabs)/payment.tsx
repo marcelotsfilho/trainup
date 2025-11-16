@@ -1,3 +1,4 @@
+//
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Constants from "expo-constants";
 import React from "react";
@@ -10,6 +11,7 @@ import PaymentOpenList from '@/src/components/PaymentOpenList';
 const Tab = createMaterialTopTabNavigator();
 
 const statusBarHeight = Constants.statusBarHeight;
+//A altura total do cabeçalho será 108px + a altura da barra de status.
 const HEADER_HEIGHT = 108 + statusBarHeight;
 
 export default function Payment() {
@@ -18,7 +20,9 @@ export default function Payment() {
             style={{ flex: 1, backgroundColor: 'white', position: 'relative' }}>
             <Tab.Navigator
                 screenOptions={{
+                    //Estiliza linha que desliza embaixo da aba que está ativa.
                     tabBarIndicatorStyle: { backgroundColor: '#3a7dff' },
+                    //Estilo de cada uma das três abas.
                     tabBarLabel: ({ focused, children }) => (
                         <Text style={{
                             fontWeight: 'bold',
@@ -35,6 +39,7 @@ export default function Payment() {
                             {children}
                         </Text>
                     ),
+                    //Estiliza o contêiner principal da barra de abas.
                     tabBarStyle: {
                         position: 'absolute',
                         padding: 0,
@@ -45,13 +50,14 @@ export default function Payment() {
                         backgroundColor: '#3a7dff',
                         width: "100%",
                     },
+                    //Vaga que cada item (abertos, pagos, todos) ocupa na barra de abas.
                     tabBarItemStyle: {
                         width: 'auto',
                         padding: 0,
                         margin: 0,
                         marginTop: 50,
                     },
-                    sceneStyle: { marginTop: HEADER_HEIGHT, paddingTop: statusBarHeight }
+                    sceneStyle: { marginTop: HEADER_HEIGHT, paddingTop: statusBarHeight },
                 }}
             >
                 <Tab.Screen name="Abertos" component={PaymentOpenList} />

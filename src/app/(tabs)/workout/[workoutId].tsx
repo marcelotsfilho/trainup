@@ -1,13 +1,15 @@
+import { Link, Stack, useLocalSearchParams } from 'expo-router';
 import React from 'react';
-import { Stack, useLocalSearchParams, Link } from 'expo-router';
 // 1. Importe 'Pressable'
-import { ActivityIndicator, FlatList, View, Pressable } from 'react-native';
 import ExerciseCard from '@/src/components/ExerciseCard';
 import { EXERCISES } from '@/src/data/exercises';
+import { ActivityIndicator, FlatList, Pressable, View } from 'react-native';
 
 export default function WorkoutDetailScreen() {
+  //Se o usuário navegou para a página /workout/B, o useLocalSearchParams() pega esse B e o salva na variável workoutId.
   // 2. Renomeado 'id' para 'workoutId' para clareza
   const { workoutId } = useLocalSearchParams() as { workoutId?: string };
+  //Use o workoutId, se ele não existir, use a letra 'A' como padrão.
   const treinoId = (workoutId || 'A').toUpperCase();
   const items = EXERCISES[treinoId] || [];
 
