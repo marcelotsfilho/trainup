@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import dadosJSON from '../data/pagamentosAbertos.json';
+import { dadosPagamentosAbertos, PagamentosAbertos } from '../data/pagamentosAbertos';
 import PaymentsPay from "./PaymentsPay";
 
 export default function PaymentOpenList() {
-    const [listaDePagamentosAbertos, setListaDePagamentosAbertos] = useState([] as typeof dadosJSON);
+    const [listaDePagamentosAbertos, setListaDePagamentosAbertos] = useState([] as PagamentosAbertos[]);
 
     useEffect(() => {
-        setListaDePagamentosAbertos(dadosJSON);
+        setListaDePagamentosAbertos(dadosPagamentosAbertos);
     }, []);
 
     return (

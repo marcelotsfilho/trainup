@@ -1,11 +1,14 @@
+import { Link, Stack, useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { Stack, useLocalSearchParams, Link } from 'expo-router';
 import { ActivityIndicator, FlatList, View, Pressable } from 'react-native';
 import ExerciseCard from '@/src/components/ExerciseCard';
 import { EXERCISES } from '@/src/data/exercises';
+import { ActivityIndicator, FlatList, Pressable, View } from 'react-native';
 
 export default function WorkoutDetailScreen() {
   const { workoutId } = useLocalSearchParams() as { workoutId?: string };
+  //Use o workoutId, se ele não existir, use a letra 'A' como padrão.
   const treinoId = (workoutId || 'A').toUpperCase();
   const items = EXERCISES[treinoId] || [];
 
