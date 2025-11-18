@@ -1,5 +1,3 @@
-// src/app/(tabs)/workout/exercise/[exerciseId].tsx
-
 import StepNavigator from '@/src/components/StepNavigator';
 import { EXERCISES } from '@/src/data/exercises';
 import { Stack, useLocalSearchParams } from 'expo-router';

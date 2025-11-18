@@ -19,9 +19,9 @@ export default function StepNavigator({ onPrev, onCheck, onNext }: StepNavigator
 
       <TouchableOpacity
         onPress={onCheck}
-        className='w-[70px] h-[70px] bg-[#3CCF91] rounded-full items-center justify-center'
+        className='w-[70px] h-[70px] bg-[#6FAEFF] rounded-full items-center justify-center'
       >
-        <View className='w-[60px] h-[60px] bg-[#6FAEFF] rounded-full items-center justify-center'>
+        <View className='w-[60px] h-[60px] bg-[#3CCF91] rounded-full items-center justify-center'>
           <Ionicons name="checkmark" size={32} color="black" />
         </View>
       </TouchableOpacity>

@@ -1,5 +1,3 @@
-// src/app/(tabs)/workout/_layout.tsx
-
 import { Stack } from 'expo-router';
 import Timer from '@/src/components/Timer'; 
 import { View } from 'react-native';
@@ -25,9 +23,7 @@ export default function WorkoutStackLayout() {
             headerTintColor: '#fff',
             headerShadowVisible: false, // remove sobra do header
             headerRight: () => (
-              // COMO CENTRALIZAR O TIMER NO VIEW
-              // margin-left esta servindo para empurrar o texto para a esquerda
-              <View className='ml-20 items-center justify-center'>
+              <View className='ml-10 items-center justify-center'>
                 <Timer />
               </View>
             ),
@@ -38,16 +34,12 @@ export default function WorkoutStackLayout() {
         <Stack.Screen 
           name="exercise/[exerciseId]"
           options={{
-            // O título será definido dinamicamente dentro do arquivo
-            // ou você pode definir um padrão aqui.
             title: "Exercício",
             headerStyle: { backgroundColor: '#3A7DFF' },
             headerTintColor: '#fff',
             headerShadowVisible: false,
             headerRight: () => (
-              // COMO CENTRALIZAR O TIMER NO VIEW
-              // margin-left esta servindo para empurrar o texto para a esquerda
-              <View className='ml-20'>
+              <View className='ml-10'>
                 <View className='items-center justify-center'>
                   <Timer />
                 </View>

@@ -11,9 +11,9 @@ export default function AllPaymentsList() {
     const [listaTodosPagamentos, setlistaTodosPagamentos] = useState([] as typeof dadosAbertos);
 
     useEffect(() => {
-        const listaCombinada = [...dadosAbertos, ...dadosPagos];
-        setlistaTodosPagamentos(listaCombinada);
-    }, []);
+        const listaCombinada = [...dadosAbertos, ...dadosPagos];
+        setlistaTodosPagamentos(listaCombinada);
+    }, []);
 
     return (
         <ScrollView>
@@ -33,14 +33,14 @@ export default function AllPaymentsList() {
             </View>
 
             {listaTodosPagamentos.map((pagamento) => (
-                <View key={pagamento.id} className="mb-4">
-                    <PaymentsPay 
-                        title={`Mensalidade Ref: ${pagamento.mes}`} 
-                        vencimento={pagamento.dataVenc} 
-                        valor={pagamento.valor} 
-                    />
-                </View>
-            ))}
+                <View key={pagamento.id} className="mb-4">
+                    <PaymentsPay 
+                        title={`Mensalidade Ref: ${pagamento.mes}`} 
+                        vencimento={pagamento.dataVenc} 
+                        valor={pagamento.valor} 
+                    />
+                </View>
+            ))}
             </>
             )}
         </ScrollView>

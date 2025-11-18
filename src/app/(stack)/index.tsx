@@ -10,7 +10,6 @@ export default function Index() {
 
   useEffect(() => {
     let mounted = true;
-
     async function prepareApp() {
       // aqui vai toda a logica de carregamento:
       // await carregarDadosDoUsuario();
@@ -20,11 +19,9 @@ export default function Index() {
       await new Promise((resolve) => setTimeout(resolve, 3500));
 
       if (mounted) {
-        // substitui a rota atual por /login (não permite voltar para o splash)
         router.replace("/login");
       }
     }
-
     prepareApp();
 
     return () => {

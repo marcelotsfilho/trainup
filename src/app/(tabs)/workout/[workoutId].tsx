@@ -1,12 +1,10 @@
 import React from 'react';
 import { Stack, useLocalSearchParams, Link } from 'expo-router';
-// 1. Importe 'Pressable'
 import { ActivityIndicator, FlatList, View, Pressable } from 'react-native';
 import ExerciseCard from '@/src/components/ExerciseCard';
 import { EXERCISES } from '@/src/data/exercises';
 
 export default function WorkoutDetailScreen() {
-  // 2. Renomeado 'id' para 'workoutId' para clareza
   const { workoutId } = useLocalSearchParams() as { workoutId?: string };
   const treinoId = (workoutId || 'A').toUpperCase();
   const items = EXERCISES[treinoId] || [];
@@ -28,10 +26,8 @@ export default function WorkoutDetailScreen() {
         keyExtractor={(it) => it.id}
         className="px-4 mt-5"
         contentContainerStyle={{ paddingBottom: 10 }}
-        
-        // 3. Alteração principal no renderItem
         renderItem={({ item }) => (
-          // O Link 'sabe' para onde navegar
+          // o link navega para tela com base no id do item selecionado
           <Link
             // O href aponta para a nova rota de detalhe do exercício
             // ex: /workout/exercise/remada-cavalinho

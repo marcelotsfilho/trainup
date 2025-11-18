@@ -1,21 +1,16 @@
-// src/context/TimerContext.tsx
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-
-// 1. Defina o que o contexto irá fornecer
+// definição da interface do contexto do timer
 interface TimerContextData {
   tempoDecorrido: number;
   iniciado: boolean;
   toggleCronometro: () => void;
-  // (Você pode adicionar uma função reset se precisar)
-  // resetCronometro: () => void; 
 }
 
-// 2. Crie o Contexto
+// criação do contexto
 const TimerContext = createContext<TimerContextData | undefined>(undefined);
 
-// 3. Crie o "Provedor" (Provider)
+// 3. criação do provider (faz o papel de pai do estado)
 export function TimerProvider({ children }: { children: ReactNode }) {
-  // A LÓGICA DO ESTADO VEIO PARA CÁ
   const [tempoDecorrido, setTempoDecorrido] = useState(0);
   const [iniciado, setIniciado] = useState(false);
 
@@ -35,18 +30,11 @@ export function TimerProvider({ children }: { children: ReactNode }) {
   }, [iniciado]);
 
   const toggleCronometro = () => setIniciado((v) => !v);
-  
-  // Opcional: função de reset
-  // const resetCronometro = () => {
-  //   setTempoDecorrido(0);
-  //   setIniciado(false);
-  // };
 
   const value = {
     tempoDecorrido,
     iniciado,
     toggleCronometro,
-    // resetCronometro
   };
 
   return <TimerContext.Provider value={value}>{children}</TimerContext.Provider>;
