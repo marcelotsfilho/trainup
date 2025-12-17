@@ -34,7 +34,7 @@ export default function Login() {
     setIsLoading(true);
     try {
       await signIn(user, password);
-      // Navigation is handled in AuthContext
+      // Navegação automática após login bem sucedido
     } catch (error) {
       Alert.alert("Erro", "Usuário ou senha incorretos.");
     } finally {

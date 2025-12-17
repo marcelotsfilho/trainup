@@ -16,14 +16,16 @@ import {
 
 export default function WorkoutDetailScreen() {
   const { workoutId } = useLocalSearchParams() as { workoutId?: string };
+  // Pegando os exercícios do contexto de treinos
   const { exercises, loading } = useWorkouts();
   const { tempoDecorrido, iniciado, toggleCronometro, resetCronometro } = useTimer();
   const { user } = useAuth();
   const router = useRouter();
   const [saving, setSaving] = useState(false);
 
-  //Use o workoutId, se ele não existir, use a letra 'A' como padrão.
+  //Use o workoutId, se ele não existir, usa a letra 'A' como padrão.
   const treinoId = (workoutId || "A").toUpperCase();
+  // Pega os exercícios do treino baseado no ID do treino.
   const items = exercises[treinoId] || [];
 
   const handleStartWorkout = () => {

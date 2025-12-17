@@ -1,5 +1,6 @@
 import api from "./api";
 
+// As interfaces definem a estrutura dos dados que são esperados da API quando fizer as chamadas
 export interface User {
   _id: string;
   email: string;
@@ -57,10 +58,12 @@ export interface WorkoutHistoryRequest {
   durationSeconds: number;
 }
 
+// Funções para interagir com a API
 export const loginUser = async (
   email: string,
   password: string
 ): Promise<LoginResponse> => {
+  // Chamada da API para o login do usuario
   const response = await api.post<LoginResponse>("/users/login", {
     email,
     password,
@@ -69,6 +72,7 @@ export const loginUser = async (
 };
 
 export const getUserPayments = async (userId: string): Promise<Payment[]> => {
+  // Chamada da API para obter os pagamentos do usuario
   const response = await api.get<PaymentsResponse>(`/users/${userId}/payments`);
   return response.data.data;
 };
@@ -76,6 +80,7 @@ export const getUserPayments = async (userId: string): Promise<Payment[]> => {
 export const getUserExercises = async (
   userId: string
 ): Promise<Record<string, Exercise[]>> => {
+  // Chamada da API para obter os exercicios do usuario
   const response = await api.get<ExercisesResponse>(
     `/exercises/user/${userId}`
   );
@@ -83,5 +88,6 @@ export const getUserExercises = async (
 };
 
 export const saveWorkoutHistory = async (data: WorkoutHistoryRequest): Promise<void> => {
+  // Chamada da API para salvar o historico de treino
   await api.post('/exercises/history', data);
 };

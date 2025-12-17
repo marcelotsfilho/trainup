@@ -8,6 +8,7 @@ const router = express.Router();
 router.post('/login', usersController.loginUser);
 router.post('/', usersController.createUser); // Registrar novo usuário
 
+// Tudo que tiver no protecter (middleware de autenticação) será protegido
 // Rotas protegidas de usuários
 router.get('/', protect, usersController.getAllUsers);
 router.get('/:id', protect, usersController.getUserById);

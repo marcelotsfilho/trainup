@@ -22,6 +22,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Se tiver dados no storage, mantem o usuareio logado
   useEffect(() => {
     async function loadStorageData() {
       const storedUser = await AsyncStorage.getItem("userData");
@@ -36,6 +37,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     loadStorageData();
   }, []);
 
+  // caso nao tenha usuario no storage, redireciona para o login
   async function signIn(email: string, password: string) {
     try {
       const response = await loginUser(email, password);
@@ -57,6 +59,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   }
 
+  // função de logout do sistema
   async function signOut() {
     await AsyncStorage.removeItem("userToken");
     await AsyncStorage.removeItem("userData");
@@ -64,6 +67,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     router.replace("/(stack)/login");
   }
 
+  // passagem dentro de um context para nao perder o estado do usuario(nao perder os dados ao navegar entre telas)
   return (
     <AuthContext.Provider value={{ user, loading, signIn, signOut }}>
       {children}
