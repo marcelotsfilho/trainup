@@ -9,7 +9,7 @@ const MONGODB_URI = process.env.MONGO_URI;
 
 // Verifica se a URI está definida
 if (!MONGODB_URI) {
-  console.error("MONGO_URI is not defined in environment variables");
+  console.error("MONGO_URI não está definida nas variáveis de ambiente");
 }
 
 
@@ -27,7 +27,7 @@ if (!cached) {
 const connectDB = async () => {
   // Verifica novamente se a URI está definida
   if (!MONGODB_URI) {
-    throw new Error("MONGO_URI is not defined in environment variables");
+    throw new Error("MONGO_URI não está definida nas variáveis de ambiente");
   }
 
 
@@ -52,11 +52,11 @@ const connectDB = async () => {
   // Aguarda a promessa de conexão e armazena a conexão em cache
   try {
     cached.conn = await cached.promise;
-    console.log(`MongoDB Connected: ${cached.conn.connection.host}`);
+    console.log(`MongoDB Conectado: ${cached.conn.connection.host}`);
   } catch (e) {
     // Em caso de erro, limpa a promessa em cache para permitir novas tentativas
     cached.promise = null;
-    console.error(`Error: ${(e as Error).message}`);
+    console.error(`Erro: ${(e as Error).message}`);
     throw e;
   }
 

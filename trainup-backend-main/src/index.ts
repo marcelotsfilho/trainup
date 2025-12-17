@@ -19,9 +19,9 @@ app.use(async (req, res, next) => {
     await connectDB();
     next();
   } catch (error) {
-    console.error("Database connection failed:", error);
+    console.error("Falha na conexão com o banco de dados:", error);
     res.status(500).json({ 
-      error: "Database connection failed", 
+      error: "Falha na conexão com o banco de dados", 
       details: (error as Error).message 
     });
   }
@@ -31,16 +31,16 @@ app.use(async (req, res, next) => {
 app.use("/users", usersRouter);
 app.use("/exercises", exercisesRouter);
 app.get("/", (req, res) => {
-  const MONGODB_URI = process.env.MONGO_URI || "not set";
-  console.log(`MongoDB URI: ${MONGODB_URI}`);
-  res.send("API is running, mongoDB connected.");
+  const MONGODB_URI = process.env.MONGO_URI || "não definido";
+  console.log(`URI do MongoDB: ${MONGODB_URI}`);
+  res.send("API está em execução, MongoDB conectado.");
 });
 
 // inicia o servidor
 const PORT = process.env.PORT || 3000;
 if (process.env.NODE_ENV !== "production") {
   app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Servidor em execução em http://localhost:${PORT}`);
   });
 }
 
